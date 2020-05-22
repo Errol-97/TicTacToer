@@ -1,0 +1,35 @@
+table{
+    margin-top: 8em;
+    margin-left: 42%;
+}
+td {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.xplayer{
+    background-color: red;
+}
+
+.oplayer{
+    background-color: blue;
+
+}
+
+.xplayerclick{
+    background-color: red;
+}
+
+.oplayerclick{
+    background-color: blue;
+
+}
+#winnerText{
+    text-align: center;
+    
+}
+
+.draw{
+    background-color: slategrey;
+}
