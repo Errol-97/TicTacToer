@@ -6,6 +6,7 @@ td {
     height: 100px;
     width: 100px;
     border: 1px solid black;
+    border-radius: 2%;
 }
 
 .xplayer{
@@ -32,4 +33,17 @@ td {
 
 .draw{
     background-color: slategrey;
+}
+
+.rstDiv{
+    max-width: 30%;
+    margin: 20px auto;
+}
+
+#rst{
+    max-width: 30%;
+    padding: 1.33;
+    background-color: tomato;
+    border-radius: 2%;
+    float: right;
 }

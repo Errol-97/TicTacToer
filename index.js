@@ -1,5 +1,6 @@
 let tds = document.querySelectorAll("td");
 let txt = document.getElementById("winnerText");
+let reset = document.getElementById("rst");
 let gameWon = false;
 let counter = 0;
 
@@ -15,7 +16,7 @@ function sameCol(lis){
             console.log('y: ' + tds[y].classList.item(0));
             return true;
         } else {
-            console.log('No winning cases found at squares ' + x + ' and ' +y);
+            console.log('No winning cases found at squares ' + z + ', ' + x + ' and ' +y);
         }
         
 
@@ -66,7 +67,31 @@ for(let i = 0; i< tds.length; i++){
     });
 
 
+}//end of board listeners
+
+
+
+function resetGame(){
+    counter = 0;
+    gameWon = false;
+    txt.innerHTML = 'Let\'s play Tic Tac Toe!';
+    txt.classList.remove('draw');
+    txt.classList.remove('xplayer');
+    txt.classList.remove('oplayer');
+    for(let i = 0; i< tds.length; i++){
+        tds[i].classList.remove('xplayerclick');
+        tds[i].classList.remove('oplayerclick');
+        tds[i].classList.remove('xplayer');//idk why it is adding these
+        tds[i].classList.remove('oplayer');//idk why it is adding these
+        // console.log(tds[i].classList.length);
+    }
 }
+
+//reset button
+reset.addEventListener("click", function(){
+    resetGame();
+    // console.log('reset button clicked');
+});
 
 function checkWinner(place,  player){
     let win;
