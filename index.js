@@ -51,11 +51,13 @@ for(let i = 0; i< tds.length; i++){
             console.log('It\'s a draw');
             txt.classList.add("draw");
         }else if(currentPlayer === 'x' && !gameWon && !( this.classList.contains("xplayerclick") || this.classList.contains("oplayerclick"))){
+            this.classList.remove("xplayer");
             this.classList.add("xplayerclick");
             counter++
             if(checkWinner(i, currentPlayer)===true) return;
             currentPlayer = 'o' ;
         } else if(currentPlayer === 'o' &&  !gameWon && !( this.classList.contains("xplayerclick") || this.classList.contains("oplayerclick"))){
+            this.classList.remove("oplayer");
             this.classList.add("oplayerclick");
             counter++
             if(checkWinner(i, currentPlayer)===true) return;
@@ -74,6 +76,7 @@ for(let i = 0; i< tds.length; i++){
 function resetGame(){
     counter = 0;
     gameWon = false;
+    currentPlayer = 'x';
     txt.innerHTML = 'Let\'s play Tic Tac Toe!';
     txt.classList.remove('draw');
     txt.classList.remove('xplayer');
@@ -81,8 +84,8 @@ function resetGame(){
     for(let i = 0; i< tds.length; i++){
         tds[i].classList.remove('xplayerclick');
         tds[i].classList.remove('oplayerclick');
-        tds[i].classList.remove('xplayer');//idk why it is adding these
-        tds[i].classList.remove('oplayer');//idk why it is adding these
+        //tds[i].classList.remove('xplayer');//idk why it is adding these| updated click event listenter
+        //tds[i].classList.remove('oplayer');//idk why it is adding these | updated click event listener
         // console.log(tds[i].classList.length);
     }
 }
@@ -126,10 +129,12 @@ function checkWinner(place,  player){
     }
     if(win === true){
         gameWon = true;
-        txt.innerHTML = "Winner is "+ player.toUpperCase();
+        // txt.innerHTML = "Winner is "+ player.toUpperCase();
         if(player === 'x'){
+            txt.innerHTML = "Winner is Red player!"
             txt.classList.add("xplayer")
         } else {
+            txt.innerHTML = "Winner is Blue player!"
             txt.classList.add("oplayer")
         }
         

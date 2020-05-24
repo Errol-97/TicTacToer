@@ -1,6 +1,23 @@
+body{
+    background-color: rgb(108, 129, 143);
+}
+h1{
+    margin: 0;
+    padding: 50px 0;
+    background-color: rgb(75, 219, 140);
+    font-family: 'Chlesea Market', cursive;
+    text-align: center;
+}
+
+#winnerText{
+    font-family: 'Chlesea Market', cursive;
+    text-align: center;
+    color: white;
+    
+}
+
 table{
-    margin-top: 8em;
-    margin-left: 42%;
+    margin: 20px auto;
 }
 td {
     height: 100px;
@@ -11,10 +28,12 @@ td {
 
 .xplayer{
     background-color: red;
+    border: 2px solid gold;
 }
 
 .oplayer{
     background-color: blue;
+    border: 2px solid gold;
 
 }
 
@@ -26,18 +45,15 @@ td {
     background-color: blue;
 
 }
-#winnerText{
-    text-align: center;
-    
-}
+
 
 .draw{
     background-color: slategrey;
 }
 
 .rstDiv{
-    max-width: 30%;
-    margin: 20px auto;
+    max-width: 60%;
+    margin-top: 20px;
 }
 
 #rst{
