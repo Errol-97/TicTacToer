@@ -1,8 +1,22 @@
+
 let tds = document.querySelectorAll("td");
 let txt = document.getElementById("winnerText");
 let reset = document.getElementById("rst");
+let newPlayers  = document.getElementById("newPlayers");
 let gameWon = false;
+let xWinCount = 0; 
+let oWinCount = 0;
 let counter = 0;
+let xpName = prompt('Player 1 name:');
+let opName = prompt('Player 2 name:');
+let xInput = document.getElementById('xPlayerName');
+let oInput = document.getElementById('oPlayerName');
+// xInput.innerHTML = xpName + ': ' + xWinCount;
+// oInput.innerHTML = opName + ': '+ oWinCount;
+updateScoreBoard();
+// let xpName = 'xplayer';
+// let opName = 'oplayer';
+
 
 function sameCol(lis){
     for(let i =0; i<lis.length -1; i= i+2){
@@ -75,6 +89,7 @@ for(let i = 0; i< tds.length; i++){
 
 function resetGame(){
     counter = 0;
+    updateScoreBoard();
     gameWon = false;
     currentPlayer = 'x';
     txt.innerHTML = 'Let\'s play Tic Tac Toe!';
@@ -95,6 +110,18 @@ reset.addEventListener("click", function(){
     resetGame();
     // console.log('reset button clicked');
 });
+
+//new players
+newPlayers.addEventListener("click" , function(){
+    resetGame();
+    xWinCount = 0;
+    oWinCount = 0;
+    xpName = prompt("Player 1 name:");
+    opName = prompt("Player 2 name:");
+    updateScoreBoard();
+    // xInput.innerHTML = xpName + ': '+ xWinCount;
+    // oInput.innerHTML = opName + ': ' +oWinCount;
+})
 
 function checkWinner(place,  player){
     let win;
@@ -131,13 +158,20 @@ function checkWinner(place,  player){
         gameWon = true;
         // txt.innerHTML = "Winner is "+ player.toUpperCase();
         if(player === 'x'){
-            txt.innerHTML = "Winner is Red player!"
-            txt.classList.add("xplayer")
+            xWinCount++;
+            txt.innerHTML = xpName + " wins!";
+            txt.classList.add("xplayer");
         } else {
-            txt.innerHTML = "Winner is Blue player!"
-            txt.classList.add("oplayer")
+            txt.innerHTML = opName + " wins!";
+            txt.classList.add("oplayer");
+            oWinCount++;
         }
         
     }
     return false;
+}
+
+function updateScoreBoard(){
+    xInput.innerHTML = xpName + ': ' + xWinCount;
+    oInput.innerHTML = opName + ': ' + oWinCount;
 }

@@ -1,10 +1,12 @@
 body{
     background-color: rgb(108, 129, 143);
+    /* margin: 0; */
+
 }
 h1{
-    margin: 0;
     padding: 50px 0;
-    background-color: rgb(75, 219, 140);
+    margin-bottom: 25px;
+    background-color: lightblue;
     font-family: 'Chlesea Market', cursive;
     text-align: center;
 }
@@ -15,10 +17,28 @@ h1{
     color: white;
     
 }
-
-table{
-    margin: 20px auto;
+.gameBoard{
+    /* max-width: 100%; */
+    width: 80%;
+    height: 500px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
 }
+
+.tab{
+    margin: 20px 39% 20px 0;
+    width: 39%;
+    height: 200px;
+    float: left;
+}
+.score{
+    margin-left: 39%;
+    height: 200px;
+    border: 2px solid black;
+    
+}
+
+
 td {
     height: 100px;
     width: 100px;
@@ -56,10 +76,21 @@ td {
     margin-top: 20px;
 }
 
+#newPlayers{
+    max-width: 30%;
+    padding: 1.33;
+    background-color: lightblue;
+    border-radius: 2%;
+    float: right;
+}
+
+
 #rst{
     max-width: 30%;
     padding: 1.33;
     background-color: tomato;
     border-radius: 2%;
+    margin-right: 10px;
     float: right;
 }
+

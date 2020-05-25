@@ -10,25 +10,39 @@
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <div id="winnerText">Let's play Tic Tac Toe!</div>
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <div class= "rstDiv"><button id="rst">Reset</button></div>
+    <section class="gameBoard">
+        
+        <div class="tab">
+            <div id="winnerText">Let's play Tic Tac Toe!</div>
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="score">
+            <p id="xPlayerName">Player One: 1</p>
+            <p id="oPlayerName">Player Two: 0</p>
+            <div class= "rstDiv"> 
+                <button id="newPlayers">New Players</button>
+                <button id="rst">Reset</button>
+            </div>
+        </div>
+    </section>
+    
+    
     
     <script src="index.js"></script>
 </body>
